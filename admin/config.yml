@@ -1,0 +1,98 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  # === INFORMATIONS GÉNÉRALES DU SITE ===
+  - name: "site-settings"
+    label: "⚙️ Paramètres du site"
+    files:
+      - file: "data/site.yml"
+        label: "Informations générales"
+        name: "site-info"
+        fields:
+          - {label: "Nom de l'agence", name: "agency_name", widget: "string", default: "KWAOUKI RDC"}
+          - {label: "Slogan principal", name: "tagline", widget: "string", default: "Agence de Communication"}
+          - {label: "Titre principal (Hero)", name: "hero_title", widget: "string", default: "Donnons voix à votre marque."}
+          - {label: "Sous-titre Hero", name: "hero_subtitle", widget: "string", default: "Stratégie · Créativité · Impact"}
+          - {label: "Texte du bouton CTA", name: "cta_text", widget: "string", default: "Discutons de votre projet"}
+          - {label: "Numéro WhatsApp (avec indicatif, sans + ni espaces)", name: "whatsapp_number", widget: "string", default: "243861636739"}
+          - {label: "Email de contact", name: "email", widget: "string", default: "contact@kwaouki.com"}
+          - {label: "Téléphone affiché", name: "phone", widget: "string", default: "+243 861 636 739"}
+          - {label: "Adresse physique", name: "address", widget: "string", default: "République Démocratique du Congo"}
+          - {label: "Facebook (lien complet)", name: "facebook", widget: "string", required: false}
+          - {label: "Instagram (lien complet)", name: "instagram", widget: "string", required: false}
+          - {label: "LinkedIn (lien complet)", name: "linkedin", widget: "string", required: false}
+          - {label: "Twitter/X (lien complet)", name: "twitter", widget: "string", required: false}
+
+  # === SECTION À PROPOS ===
+  - name: "about-section"
+    label: " Section À propos"
+    files:
+      - file: "data/about.yml"
+        label: "Contenu À propos"
+        name: "about-content"
+        fields:
+          - {label: "Titre de la section", name: "section_title", widget: "string", default: "L'art de communiquer avec impact."}
+          - {label: "Sous-titre visuel", name: "visual_title", widget: "string", default: "Votre succès est notre signature."}
+          - {label: "Titre du bloc texte", name: "text_title", widget: "string", default: "Notre identité"}
+          - {label: "Premier paragraphe", name: "paragraph1", widget: "text", default: "KWAOUKI RDC est une agence de communication 360° dédiée aux entreprises, institutions et personnalités publiques qui souhaitent affirmer leur présence, structurer leur message et maximiser leur impact."}
+          - {label: "Deuxième paragraphe", name: "paragraph2", widget: "text", default: "Nous combinons stratégie, créativité et exécution technique pour transformer vos ambitions en résultats mesurables. De la conception à la diffusion, nous pilotons l'intégralité de votre écosystème de communication."}
+          - label: "Valeurs (chips)"
+            name: "values"
+            widget: "list"
+            fields:
+              - {label: "Valeur", name: "value", widget: "string"}
+
+  # === SERVICES ===
+  - name: "services"
+    label: " Services"
+    folder: "data/services"
+    create: true
+    fields:
+      - {label: "Numéro", name: "number", widget: "string"}
+      - {label: "Titre du service", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Icône (emoji ou code)", name: "icon", widget: "string", default: ""}
+
+  # === APPROCHE/MÉTHODOLOGIE ===
+  - name: "approach"
+    label: "🔄 Méthodologie"
+    folder: "data/approach"
+    create: true
+    fields:
+      - {label: "Numéro de l'étape", name: "number", widget: "string"}
+      - {label: "Titre de l'étape", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+
+  # === RÉALISATIONS/PORTFOLIO ===
+  - name: "portfolio"
+    label: " Réalisations"
+    folder: "data/portfolio"
+    create: true
+    fields:
+      - {label: "Titre du projet", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Type de média", name: "media_type", widget: "select", options: ["image", "video"]}
+      - {label: "URL de l'image ou vidéo (lien YouTube/Vimeo pour vidéos)", name: "media_url", widget: "string"}
+      - {label: "Catégorie", name: "category", widget: "string", default: "Communication"}
+      - {label: "Date", name: "date", widget: "datetime", default: ""}
+
+  # === COULEURS DU SITE ===
+  - name: "colors"
+    label: " Couleurs du site"
+    files:
+      - file: "data/colors.yml"
+        label: "Personnalisation des couleurs"
+        name: "site-colors"
+        fields:
+          - {label: "Couleur principale (Bleu)", name: "primary_color", widget: "color", default: "#1a4fa0", enable_alpha: false}
+          - {label: "Couleur secondaire (Rouge)", name: "secondary_color", widget: "color", default: "#e03e3e", enable_alpha: false}
+          - {label: "Couleur d'accent (Jaune)", name: "accent_color", widget: "color", default: "#f5d560", enable_alpha: false}
+          - {label: "Couleur de fond Hero", name: "hero_background", widget: "color", default: "#ffffff", enable_alpha: false}
+          - {label: "Couleur de fond Services", name: "services_background", widget: "color", default: "#f4f4f4", enable_alpha: false}
+          - {label: "Couleur de fond Approche", name: "approach_background", widget: "color", default: "#0a0a0a", enable_alpha: false}
+          - {label: "Couleur de fond Contact", name: "contact_background", widget: "color", default: "#0a0a0a", enable_alpha: false}
