@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KWAOUKI RDC — Agence de Communication 360°</title>
 <meta name="description" content="KWAOUKI RDC, agence de communication 360°. Stratégie, créativité, impact.">
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 <style>
   :root{
     --bleu:#1a4fa0;
@@ -445,6 +446,37 @@
     50%{box-shadow:0 6px 30px rgba(37,211,102,.8);}
   }
 
+  /* ===== LIGHTBOX ===== */
+  .lightbox{
+    display:none;
+    position:fixed;
+    top:0;left:0;right:0;bottom:0;
+    background:rgba(0,0,0,.95);
+    z-index:10000;
+    align-items:center;justify-content:center;
+    padding:20px;
+  }
+  .lightbox.active{display:flex;}
+  .lightbox-content{
+    max-width:90%;
+    max-height:90%;
+    position:relative;
+  }
+  .lightbox-close{
+    position:absolute;
+    top:-40px;right:0;
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:32px;
+    cursor:pointer;
+  }
+  .lightbox img, .lightbox iframe{
+    max-width:100%;
+    max-height:80vh;
+    border-radius:8px;
+  }
+
   /* ===== RESPONSIVE ===== */
   @media(max-width:900px){
     .about-grid{grid-template-columns:1fr;gap:40px;}
@@ -481,7 +513,7 @@
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="#" class="header-logo">KWAOUKI RDC</a>
+    <a href="#" class="header-logo" id="header-logo">KWAOUKI RDC</a>
     <nav>
       <ul id="navMenu">
         <li><a href="#about">À propos</a></li>
@@ -500,13 +532,11 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-logo">KWAOUKI RDC</div>
-    <div class="hero-tag">Agence de Communication</div>
-    <h1>Donnons <span>voix</span><br>à votre marque.</h1>
-    <p>Stratégie · Créativité · Impact</p>
-    <a href="https://wa.me/243861636739" target="_blank" class="hero-cta">
-      Discutons de votre projet
-    </a>
+    <div class="hero-logo" id="hero-logo">KWAOUKI RDC</div>
+    <div class="hero-tag" id="hero-tag">Agence de Communication</div>
+    <h1 id="hero-title">Donnons <span>voix</span><br>à votre marque.</h1>
+    <p id="hero-subtitle">Stratégie · Créativité · Impact</p>
+    <a href="#" id="hero-cta" class="hero-cta">Discutons de votre projet</a>
   </div>
 </section>
 
@@ -514,20 +544,16 @@
 <section class="about" id="about">
   <div class="container">
     <div class="section-label">Qui sommes-nous</div>
-    <h2 class="section-title">L'art de <span>communiquer</span> avec impact.</h2>
+    <h2 class="section-title" id="about-title">L'art de <span>communiquer</span> avec impact.</h2>
     <div class="about-grid">
       <div class="about-visual">
-        <h2>Votre succès est notre signature.</h2>
+        <h2 id="about-visual-title">Votre succès est notre signature.</h2>
       </div>
       <div class="about-text">
-        <h3>Notre identité</h3>
-        <p><strong>KWAOUKI RDC</strong> est une agence de communication 360° dédiée aux entreprises, institutions et personnalités publiques qui souhaitent affirmer leur présence, structurer leur message et maximiser leur impact.</p>
-        <p>Nous combinons <strong>stratégie, créativité et exécution technique</strong> pour transformer vos ambitions en résultats mesurables. De la conception à la diffusion, nous pilotons l'intégralité de votre écosystème de communication.</p>
-        <div class="about-values">
-          <div class="value-chip">EXCELLENCE</div>
-          <div class="value-chip">CRÉATIVITÉ</div>
-          <div class="value-chip">RÉSULTATS</div>
-        </div>
+        <h3 id="about-text-title">Notre identité</h3>
+        <p id="about-p1">KWAOUKI RDC est une agence de communication 360° dédiée aux entreprises, institutions et personnalités publiques qui souhaitent affirmer leur présence, structurer leur message et maximiser leur impact.</p>
+        <p id="about-p2">Nous combinons stratégie, créativité et exécution technique pour transformer vos ambitions en résultats mesurables. De la conception à la diffusion, nous pilotons l'intégralité de votre écosystème de communication.</p>
+        <div class="about-values" id="about-values"></div>
       </div>
     </div>
   </div>
@@ -539,48 +565,7 @@
     <div class="section-label">Nos domaines d'expertise</div>
     <h2 class="section-title">8 pôles de <span>compétence</span></h2>
     <p class="section-subtitle">Une expertise complète pour couvrir tous vos besoins en communication.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-num">01</div>
-        <h4>Communication Corporate & B2B</h4>
-        <p>Positionnement de marque, messaging d'entreprise et communication interne/externe.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num">02</div>
-        <h4>Communication Institutionnelle</h4>
-        <p>Relations publiques, communication gouvernementale et partenariats stratégiques.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num">03</div>
-        <h4>Image & E-réputation</h4>
-        <p>Gestion de l'image des personnalités publiques, personal branding et influence.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num">04</div>
-        <h4>Stratégie & Marketing Digital</h4>
-        <p>Plans de communication, campagnes multicanales et marketing de contenu.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num">05</div>
-        <h4>Ingénierie des Outils</h4>
-        <p>Conception, déploiement et gestion des supports et plateformes de communication.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num">06</div>
-        <h4>Production Audiovisuelle</h4>
-        <p>Photographie et vidéographie professionnelles, direction artistique et post-production.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num">07</div>
-        <h4>Couverture Événementielle</h4>
-        <p>Reportage, captation multi-caméras et communication en temps réel d'événements.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num">08</div>
-        <h4>Communication 360°</h4>
-        <p>Campagnes intégrées : print, digital, média, événementiel et relations presse.</p>
-      </div>
-    </div>
+    <div class="services-grid" id="services-grid"></div>
   </div>
 </section>
 
@@ -590,28 +575,7 @@
     <div class="section-label">Notre méthodologie</div>
     <h2 class="section-title">Une approche en <span>4 temps</span></h2>
     <p class="section-subtitle">Un processus éprouvé pour garantir des résultats à chaque étape.</p>
-    <div class="approach-grid">
-      <div class="approach-card">
-        <div class="approach-num">01</div>
-        <h4>Écoute & Diagnostic</h4>
-        <p>Analyse approfondie de votre écosystème, de vos objectifs et de votre audience cible.</p>
-      </div>
-      <div class="approach-card">
-        <div class="approach-num">02</div>
-        <h4>Stratégie & Conception</h4>
-        <p>Élaboration d'un plan de communication sur-mesure, aligné sur vos ambitions.</p>
-      </div>
-      <div class="approach-card">
-        <div class="approach-num">03</div>
-        <h4>Création & Déploiement</h4>
-        <p>Production des contenus et activation des campagnes sur tous les canaux pertinents.</p>
-      </div>
-      <div class="approach-card">
-        <div class="approach-num">04</div>
-        <h4>Pilotage & Optimisation</h4>
-        <p>Mesure des performances, ajustements en continu et reporting détaillé.</p>
-      </div>
-    </div>
+    <div class="approach-grid" id="approach-grid"></div>
   </div>
 </section>
 
@@ -621,29 +585,7 @@
     <div class="section-label">Nos réalisations</div>
     <h2 class="section-title">Ils nous ont fait <span>confiance</span></h2>
     <p class="section-subtitle">Une sélection de projets qui illustrent notre savoir-faire.</p>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <div class="portfolio-placeholder">
-          <div class="p-icon">📊</div>
-          <h4>Projet 1</h4>
-          <p>Votre prochaine réalisation ici</p>
-        </div>
-      </div>
-      <div class="portfolio-item">
-        <div class="portfolio-placeholder">
-          <div class="p-icon">🎬</div>
-          <h4>Projet 2</h4>
-          <p>Votre prochaine réalisation ici</p>
-        </div>
-      </div>
-      <div class="portfolio-item">
-        <div class="portfolio-placeholder">
-          <div class="p-icon">📸</div>
-          <h4>Projet 3</h4>
-          <p>Votre prochaine réalisation ici</p>
-        </div>
-      </div>
-    </div>
+    <div class="portfolio-grid" id="portfolio-grid"></div>
   </div>
 </section>
 
@@ -654,7 +596,7 @@
     <h2 class="section-title">Prêt à faire <span>rayonner</span> votre marque ?</h2>
     <p class="section-subtitle">Échangeons directement sur WhatsApp. Réponse rapide garantie.</p>
     
-    <a href="https://wa.me/243861636739?text=Bonjour%20KWAOUKI%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20services." target="_blank" class="whatsapp-btn">
+    <a href="#" id="whatsapp-btn" target="_blank" class="whatsapp-btn">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Écrire sur WhatsApp
     </a>
@@ -662,15 +604,15 @@
     <div class="contact-info">
       <div class="contact-info-item">
         <div class="ci-label">Téléphone</div>
-        <div class="ci-value">+243 861 636 739</div>
+        <div class="ci-value" id="contact-phone">+243 861 636 739</div>
       </div>
       <div class="contact-info-item">
         <div class="ci-label">Email</div>
-        <div class="ci-value">contact@kwaouki.com</div>
+        <div class="ci-value" id="contact-email">contact@kwaouki.com</div>
       </div>
       <div class="contact-info-item">
         <div class="ci-label">Localisation</div>
-        <div class="ci-value">République Démocratique du Congo</div>
+        <div class="ci-value" id="contact-address">République Démocratique du Congo</div>
       </div>
     </div>
   </div>
@@ -678,25 +620,192 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">KWAOUKI RDC</div>
-  <div class="footer-slogan">Stratégie · Créativité · Impact</div>
+  <div class="footer-logo" id="footer-logo">KWAOUKI RDC</div>
+  <div class="footer-slogan" id="footer-slogan">Stratégie · Créativité · Impact</div>
   <div class="footer-divider"></div>
   <div class="footer-copy">© 2026 KWAOUKI RDC. Tous droits réservés.</div>
   <div class="footer-signature">By FILON GROUP</div>
 </footer>
 
 <!-- WHATSAPP FLOATING BUTTON -->
-<a href="https://wa.me/243861636739?text=Bonjour%20KWAOUKI%2C%20je%20souhaite%20en%20savoir%20plus." target="_blank" class="whatsapp-float" aria-label="Contact WhatsApp">
+<a href="#" id="whatsapp-float" target="_blank" class="whatsapp-float" aria-label="Contact WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <div id="lightbox-body"></div>
+  </div>
+</div>
+
 <script>
+  const REPO = 'filongrouprdc-ops/kwaouki-site';
+  const BRANCH = 'main';
+  const RAW_BASE = `https://raw.githubusercontent.com/${REPO}/${BRANCH}`;
+
+  async function loadYAML(path) {
+    const res = await fetch(`${RAW_BASE}/${path}?t=${Date.now()}`);
+    if (!res.ok) throw new Error(`Erreur: ${path}`);
+    const text = await res.text();
+    return jsyaml.load(text);
+  }
+
+  async function loadYAMLFolder(folder) {
+    const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${folder}?ref=${BRANCH}`);
+    if (!res.ok) return [];
+    const files = await res.json();
+    const ymlFiles = files.filter(f => f.name.endsWith('.yml') || f.name.endsWith('.yaml'));
+    const results = [];
+    for (const f of ymlFiles) {
+      const data = await loadYAML(`${folder}/${f.name}`);
+      results.push(data);
+    }
+    return results.sort((a, b) => (a.number || '').localeCompare(b.number || ''));
+  }
+
+  async function init() {
+    try {
+      // Charger les données
+      const site = await loadYAML('data/site.yml');
+      const about = await loadYAML('data/about.yml');
+      const services = await loadYAMLFolder('data/services');
+      const approach = await loadYAMLFolder('data/approach');
+      const portfolio = await loadYAMLFolder('data/portfolio');
+
+      // Remplir le site
+      document.getElementById('header-logo').textContent = site.agency_name || 'KWAOUKI RDC';
+      document.getElementById('hero-logo').textContent = site.agency_name || 'KWAOUKI RDC';
+      document.getElementById('hero-tag').textContent = site.tagline || '';
+      document.getElementById('hero-title').innerHTML = (site.hero_title || '').replace(/voix/g, '<span>voix</span>');
+      document.getElementById('hero-subtitle').textContent = site.hero_subtitle || '';
+      document.getElementById('hero-cta').href = `https://wa.me/${site.whatsapp_number}`;
+      document.getElementById('hero-cta').textContent = site.cta_text || '';
+
+      // About
+      document.getElementById('about-title').innerHTML = (about.section_title || '').replace(/communiquer/g, '<span>communiquer</span>');
+      document.getElementById('about-visual-title').textContent = about.visual_title || '';
+      document.getElementById('about-text-title').textContent = about.text_title || '';
+      document.getElementById('about-p1').textContent = about.paragraph1 || '';
+      document.getElementById('about-p2').textContent = about.paragraph2 || '';
+      const valuesContainer = document.getElementById('about-values');
+      valuesContainer.innerHTML = '';
+      (about.values || []).forEach(v => {
+        const chip = document.createElement('div');
+        chip.className = 'value-chip';
+        chip.textContent = v.value;
+        valuesContainer.appendChild(chip);
+      });
+
+      // Services
+      const servicesGrid = document.getElementById('services-grid');
+      servicesGrid.innerHTML = '';
+      services.forEach(s => {
+        const card = document.createElement('div');
+        card.className = 'service-card';
+        card.innerHTML = `
+          <div class="service-num">${s.number}</div>
+          <h4>${s.title}</h4>
+          <p>${s.description}</p>
+        `;
+        servicesGrid.appendChild(card);
+      });
+
+      // Approach
+      const approachGrid = document.getElementById('approach-grid');
+      approachGrid.innerHTML = '';
+      approach.forEach(a => {
+        const card = document.createElement('div');
+        card.className = 'approach-card';
+        card.innerHTML = `
+          <div class="approach-num">${a.number}</div>
+          <h4>${a.title}</h4>
+          <p>${a.description}</p>
+        `;
+        approachGrid.appendChild(card);
+      });
+
+      // Portfolio
+      const portfolioGrid = document.getElementById('portfolio-grid');
+      portfolioGrid.innerHTML = '';
+      portfolio.forEach((p, i) => {
+        const item = document.createElement('div');
+        item.className = 'portfolio-item';
+        item.onclick = () => openLightbox(p);
+        
+        let icon = '📊';
+        if (p.media_type === 'video') icon = '🎬';
+        if (p.media_type === 'image') icon = '';
+        
+        item.innerHTML = `
+          <div class="portfolio-placeholder" style="background:linear-gradient(135deg,var(--bleu) 0%,var(--bleu-dark) 100%)">
+            <div class="p-icon">${icon}</div>
+            <h4>${p.title}</h4>
+            <p>${p.description}</p>
+          </div>
+        `;
+        portfolioGrid.appendChild(item);
+      });
+
+      // Contact
+      document.getElementById('contact-phone').textContent = site.phone || '';
+      document.getElementById('contact-email').textContent = site.email || '';
+      document.getElementById('contact-address').textContent = site.address || '';
+      document.getElementById('whatsapp-btn').href = `https://wa.me/${site.whatsapp_number}?text=Bonjour%20KWAOUKI%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20services.`;
+      document.getElementById('whatsapp-float').href = `https://wa.me/${site.whatsapp_number}?text=Bonjour%20KWAOUKI%2C%20je%20souhaite%20en%20savoir%20plus.`;
+
+      // Footer
+      document.getElementById('footer-logo').textContent = site.agency_name || 'KWAOUKI RDC';
+      document.getElementById('footer-slogan').textContent = site.hero_subtitle || '';
+
+    } catch (err) {
+      console.error('Erreur de chargement:', err);
+    }
+  }
+
+  function openLightbox(item) {
+    const lightbox = document.getElementById('lightbox');
+    const body = document.getElementById('lightbox-body');
+    
+    if (item.media_type === 'video') {
+      let videoUrl = item.media_url;
+      if (videoUrl.includes('youtube.com/watch?v=')) {
+        const videoId = videoUrl.split('v=')[1].split('&')[0];
+        videoUrl = `https://www.youtube.com/embed/${videoId}`;
+      } else if (videoUrl.includes('youtu.be/')) {
+        const videoId = videoUrl.split('youtu.be/')[1].split('?')[0];
+        videoUrl = `https://www.youtube.com/embed/${videoId}`;
+      } else if (videoUrl.includes('vimeo.com/')) {
+        const videoId = videoUrl.split('vimeo.com/')[1].split('?')[0];
+        videoUrl = `https://player.vimeo.com/video/${videoId}`;
+      }
+      body.innerHTML = `<iframe src="${videoUrl}" width="800" height="450" frameborder="0" allowfullscreen></iframe>`;
+    } else {
+      body.innerHTML = `<img src="${item.media_url}" alt="${item.title}">`;
+    }
+    
+    lightbox.classList.add('active');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.getElementById('lightbox-body').innerHTML = '';
+  }
+
+  document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox') closeLightbox();
+  });
+
   // Fermer le menu mobile au clic sur un lien
-  document.querySelectorAll('#navMenu a').forEach(link=>{
-    link.addEventListener('click',()=>{
+  document.querySelectorAll('#navMenu a').forEach(link => {
+    link.addEventListener('click', () => {
       document.getElementById('navMenu').classList.remove('active');
     });
   });
+
+  // Initialiser
+  init();
 </script>
 
 </body>
