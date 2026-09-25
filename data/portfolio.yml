@@ -1,0 +1,28 @@
+realisations:
+  - title: "Conférence THE FUTUR par Empire Group RDC"
+    description: "Conférence sur l'impact de l'entrepreneuriat des jeunes pour le futur de la RDC."
+    media_type: "video"
+    media_url: "https://youtu.be/4DCw11RHj1M"
+    category: "Événement"
+    date: "2026-09-25"
+
+  - title: "EXPO BÉTON 10 Session Jeunesse avec Empire Group RDC"
+    description: "Couverture de l'événement EXPO BÉTON 10 dédié à la jeunesse entrepreneuriale."
+    media_type: "video"
+    media_url: "https://youtu.be/cRegnaPhU34"
+    category: "Événement"
+    date: "2026-09-25"
+
+  - title: "THE GRAND MEETING entre femmes par AKADEMIK RDC"
+    description: "Événement de leadership et d'empowerment féminin organisé par AKADEMIK RDC."
+    media_type: "video"
+    media_url: "https://youtu.be/V__XUxAaUXg"
+    category: "Événement"
+    date: "2026-09-25"
+
+  - title: "Spot officiel du CFC"
+    description: "Production audiovisuelle pour le Centre Français de Coopération (CFC)."
+    media_type: "video"
+    media_url: "https://youtu.be/A0cpD69u0dg"
+    category: "Culturel & Diplomatique"
+    date: "2026-09-25"
