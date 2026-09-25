@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposition de Communication - Ambassadeur Itinérant Isabelle KIBASSA-MALIBA TSHISEKEDI</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #e0e0e0;
+    padding: 20px;
+  }
+
+  .download-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #1a4fa0;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(26,79,160,0.4);
+    z-index: 1000;
+    transition: all 0.3s;
+  }
+
+  .download-btn:hover {
+    background: #e03e3e;
+    transform: translateY(-3px);
+  }
+
+  .slide {
+    width: 297mm;
+    height: 210mm;
+    background: white;
+    margin: 0 auto 30px;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    page-break-after: always;
+  }
+
+  /* PAGE DE GARDE */
+  .cover {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a4fa0 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(245,213,96,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .cover-logo {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    color: #f5d560;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-line {
+    width: 120px;
+    height: 3px;
+    background: #e03e3e;
+    margin: 30px auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-subtitle {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #f5d560;
+    margin: 30px auto;
+    background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400') center/cover;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  }
+
+  .cover-date {
+    font-size: 16px;
+    letter-spacing: 4px;
+    color: #f5d560;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* SLIDES CONTENU */
+  .slide-content {
+    background: white;
+  }
+
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #1a4fa0;
+  }
+
+  .slide-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: #1a4fa0;
+  }
+
+  .slide-header .logo-small {
+    font-size: 20px;
+    font-weight: 900;
+    color: #0a0a0a;
+    letter-spacing: 3px;
+  }
+
+  .slide-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  .slide-body p {
+    margin-bottom: 20px;
+  }
+
+  .highlight-box {
+    background: #f4f4f4;
+    border-left: 6px solid #e03e3e;
+    padding: 25px 30px;
+    margin: 30px 0;
+    border-radius: 8px;
+  }
+
+  .highlight-box h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a4fa0;
+    margin-bottom: 15px;
+  }
+
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 30px;
+  }
+
+  .objective-card {
+    background: linear-gradient(135deg, #1a4fa0 0%, #0f3570 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .objective-card::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: rgba(245,213,96,0.2);
+    border-radius: 50%;
+  }
+
+  .objective-card .obj-number {
+    font-size: 48px;
+    font-weight: 900;
+    color: #f5d560;
+    margin-bottom: 15px;
+  }
+
+  .objective-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .objective-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+
+  .strategies-list {
+    list-style: none;
+    margin-top: 30px;
+  }
+
+  .strategies-list li {
+    background: white;
+    border: 2px solid #1a4fa0;
+    padding: 20px 25px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0a0a0a;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .strategies-list li::before {
+    content: '✓';
+    background: #e03e3e;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+  }
+
+  .team-card {
+    background: #f4f4f4;
+    padding: 25px;
+    border-radius: 12px;
+    border-top: 5px solid #1a4fa0;
+  }
+
+  .team-card:nth-child(2) { border-top-color: #e03e3e; }
+  .team-card:nth-child(3) { border-top-color: #f5d560; }
+  .team-card:nth-child(4) { border-top-color: #0a0a0a; }
+
+  .team-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a4fa0;
+    margin-bottom: 10px;
+  }
+
+  .team-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .budget-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .budget-card {
+    background: linear-gradient(135deg, #0a0a0a 0%, #2a2a2a 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .budget-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: #f5d560;
+  }
+
+  .budget-card.premium::before {
+    background: #e03e3e;
+  }
+
+  .budget-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #f5d560;
+  }
+
+  .budget-card .price {
+    font-size: 48px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .budget-card .period {
+    font-size: 16px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+  }
+
+  .budget-card ul {
+    list-style: none;
+    text-align: left;
+  }
+
+  .budget-card ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+  }
+
+  .budget-card ul li::before {
+    content: '✓ ';
+    color: #f5d560;
+    font-weight: 900;
+  }
+
+  .availability-box {
+    background: linear-gradient(135deg, #1a4fa0 0%, #0f3570 100%);
+    color: white;
+    padding: 60px;
+    border-radius: 16px;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .availability-box h3 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+
+  .availability-box p {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: #f5d560;
+  }
+
+  .footer-slide {
+    position: absolute;
+    bottom: 30px;
+    left: 60px;
+    right: 60px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+  }
+
+  .note-box {
+    background: #fff9e6;
+    border: 2px solid #f5d560;
+    padding: 20px 25px;
+    border-radius: 8px;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  .note-box strong {
+    color: #1a4fa0;
+  }
+</style>
+</head>
+<body>
+
+<button class="download-btn" onclick="downloadPDF()"> Télécharger en PDF</button>
+
+<div id="document">
+
+  <!-- PAGE 1 : COUVERTURE -->
+  <div class="slide cover">
+    <div class="cover-logo">KWAOUKI RDC</div>
+    <div class="cover-line"></div>
+    <div class="cover-photo"></div>
+    <h1 class="cover-title">Proposition de Gestion<br>de Communication 360°</h1>
+    <div class="cover-subtitle">Ambassadeur Itinérant du Chef de l'État<br><strong>Madame Isabelle KIBASSA-MALIBA TSHISEKEDI</strong></div>
+    <div class="cover-date">SEPTEMBRE 2026</div>
+  </div>
+
+  <!-- PAGE 2 : PRÉSENTATION KWAOUKI -->
+  <div class="slide slide-content">
+    <div class="slide-header">
+      <h2>Qui sommes-nous ?</h2>
+      <div class="logo-small">KWAOUKI RDC</div>
+    </div>
+    <div class="slide-body">
+      <p style="font-size: 18px; line-height: 1.9; color: #333;">
+        <strong style="color: #1a4fa0; font-size: 22px;">KWAOUKI RDC</strong> est une agence de communication 360° dédiée aux entreprises, institutions et personnalités publiques qui souhaitent affirmer leur présence, structurer leur message et maximiser leur impact.
+      </p>
+      <div class="highlight-box">
+        <h3>Notre mission</h3>
+        <p style="margin: 0;">Nous combinons stratégie, créativité et exécution technique pour transformer vos ambitions en résultats mesurables. De la conception à la diffusion, nous pilotons l'intégralité de votre écosystème de communication.</p>
+      </div>
+      <p style="margin-top: 30px;">
+        Notre expertise couvre l'ensemble des leviers de communication moderne : stratégie institutionnelle, relations presse, production audiovisuelle, gestion des réseaux sociaux, organisation événementielle et ingénierie des outils digitaux.
+      </p>
+    </div>
+    <div class="footer-slide">
+      <span>KWAOUKI RDC — Agence de Communication 360°</span>
+      <span>Page 1</span>
+    </div>
+  </div>
+
+  <!-- PAGE 3 : OBJECTIFS -->
+  <div class="slide slide-content">
+    <div class="slide-header">
+      <h2>Nos Objectifs</h2>
+      <div class="logo-small">KWAOUKI RDC</div>
+    </div>
+    <div class="slide-body">
+      <p style="font-size: 17px; margin-bottom: 30px;">
+        Une stratégie de communication pensée pour positionner Madame l'Ambassadeur Itinérant comme une figure incontournable de la scène institutionnelle et politique.
+      </p>
+      <div class="objectives-grid">
+        <div class="objective-card">
+          <div class="obj-number">01</div>
+          <h4>Visibilité & Réputation</h4>
+          <p>Renforcer la visibilité publique et protéger la réputation de Madame l'Ambassadeur Itinérant à travers une communication stratégique et maîtrisée.</p>
+        </div>
+        <div class="objective-card">
+          <div class="obj-number">02</div>
+          <h4>Positionnement Institutionnel</h4>
+          <p>Faire d'elle une figure incontournable dans le monde des acteurs institutionnels et politiques, tant au niveau national qu'international.</p>
+        </div>
+        <div class="objective-card">
+          <div class="obj-number">03</div>
+          <h4>Suivi & Optimisation</h4>
+          <p>Assurer un suivi minutieux de toutes les actions de communication avec des rapports réguliers et des ajustements en temps réel.</p>
+        </div>
+        <div class="objective-card">
+          <div class="obj-number">04</div>
+          <h4>Influence & Leadership</h4>
+          <p>Construire une narration cohérente qui renforce son leadership et son influence dans les sphères décisionnelles.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-slide">
+      <span>KWAOUKI RDC — Agence de Communication 360°</span>
+      <span>Page 2</span>
+    </div>
+  </div>
+
+  <!-- PAGE 4 : STRATÉGIES -->
+  <div class="slide slide-content">
+    <div class="slide-header">
+      <h2>Notre Stratégie</h2>
+      <div class="logo-small">KWAOUKI RDC</div>
+    </div>
+    <div class="slide-body">
+      <p style="font-size: 18px; font-weight: 700; color: #1a4fa0; margin-bottom: 25px;">
+        Mettre en place une communication totale et intégrée
+      </p>
+      <ul class="strategies-list">
+        <li>Plan de communication mensuel personnalisé et évolutif</li>
+        <li>Gestion des réseaux sociaux officiels et certifiés</li>
+        <li>Création de contenus premium et couverture des activités</li>
+        <li>Organisation d'événements stratégiques en sa faveur</li>
+        <li>Relations presse et médias (nationaux et internationaux)</li>
+        <li>Interviews mensuelles et prises de parole publiques</li>
+        <li>Veille médiatique et gestion de l'e-réputation</li>
+        <li>Production audiovisuelle professionnelle</li>
+      </ul>
+    </div>
+    <div class="footer-slide">
+      <span>KWAOUKI RDC — Agence de Communication 360°</span>
+      <span>Page 3</span>
+    </div>
+  </div>
+
+  <!-- PAGE 5 : ÉQUIPE -->
+  <div class="slide slide-content">
+    <div class="slide-header">
+      <h2>Notre Équipe</h2>
+      <div class="logo-small">KWAOUKI RDC</div>
+    </div>
+    <div class="slide-body">
+      <p style="font-size: 17px; margin-bottom: 20px;">
+        Nous mettrons à disposition une équipe dédiée de <strong>4 professionnels</strong> :
+      </p>
+      <div class="team-grid">
+        <div class="team-card">
+          <h4>Responsable de la Cellule de Communication</h4>
+          <p>Pilotage stratégique, coordination générale et reporting.</p>
+        </div>
+        <div class="team-card">
+          <h4>Responsable Adjoint & Community Manager</h4>
+          <p>Gestion des réseaux sociaux, animation digitale et engagement.</p>
+        </div>
+        <div class="team-card">
+          <h4>Photographe-Vidéaste Professionnel</h4>
+          <p>Production de contenus visuels haute qualité et couverture événementielle.</p>
+        </div>
+        <div class="team-card">
+          <h4>Graphiste Designer</h4>
+          <p>Création visuelle, identité graphique et supports de communication.</p>
+        </div>
+      </div>
+      <div class="note-box">
+        <strong>Note :</strong> Pour les déplacements à l'intérieur du pays et à l'étranger, nous disposerons maximum 2 agents (soit un des responsables et le Photographe-Vidéaste).
+      </div>
+    </div>
+    <div class="footer-slide">
+      <span>KWAOUKI RDC — Agence de Communication 360°</span>
+      <span>Page 4</span>
+    </div>
+  </div>
+
+  <!-- PAGE 6 : BUDGET -->
+  <div class="slide slide-content">
+    <div class="slide-header">
+      <h2>Investissement</h2>
+      <div class="logo-small">KWAOUKI RDC</div>
+    </div>
+    <div class="slide-body">
+      <p style="font-size: 17px; margin-bottom: 20px;">
+        Deux formules adaptées à vos besoins et à la nature des contenus produits :
+      </p>
+      <div class="budget-container">
+        <div class="budget-card premium">
+          <h3>Formule Premium</h3>
+          <div class="price">3 000 $</div>
+          <div class="period">par mois</div>
+          <ul>
+            <li>Utilisation d'appareils professionnels</li>
+            <li>Production audiovisuelle haut de gamme</li>
+            <li>Équipe complète de 4 personnes</li>
+            <li>Couverture événementielle complète</li>
+            <li>Contenus optimisés pour tous supports</li>
+          </ul>
+        </div>
+        <div class="budget-card">
+          <h3>Formule Standard</h3>
+          <div class="price">1 750 $</div>
+          <div class="period">par mois</div>
+          <ul>
+            <li>Utilisation d'appareils simples</li>
+            <li>Production audiovisuelle standard</li>
+            <li>Équipe complète de 4 personnes</li>
+            <li>Couverture événementielle essentielle</li>
+            <li>Contenus pour réseaux sociaux</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-slide">
+      <span>KWAOUKI RDC — Agence de Communication 360°</span>
+      <span>Page 5</span>
+    </div>
+  </div>
+
+  <!-- PAGE 7 : DISPONIBILITÉ & CONCLUSION -->
+  <div class="slide slide-content">
+    <div class="slide-header">
+      <h2>Disponibilité</h2>
+      <div class="logo-small">KWAOUKI RDC</div>
+    </div>
+    <div class="slide-body">
+      <div class="availability-box">
+        <h3>Prêts à commencer</h3>
+        <p>DISPONIBILITÉ IMMÉDIATE</p>
+      </div>
+      <p style="font-size: 17px; margin-top: 40px; line-height: 1.8;">
+        Notre équipe est mobilisable dès la validation de cette proposition. Nous nous engageons à déployer l'ensemble des ressources nécessaires pour assurer le succès de cette mission de communication stratégique.
+      </p>
+      <div class="highlight-box" style="margin-top: 40px;">
+        <h3>Prochaines étapes</h3>
+        <p style="margin: 0;">1. Validation de la proposition<br>2. Signature du contrat<br>3. Briefing stratégique initial<br>4. Lancement opérationnel sous 7 jours</p>
+      </div>
+      <p style="font-size: 16px; margin-top: 40px; text-align: center; font-weight: 600; color: #1a4fa0;">
+        Votre réputation, notre obligation.
+      </p>
+    </div>
+    <div class="footer-slide">
+      <span>KWAOUKI RDC — Agence de Communication 360°</span>
+      <span>Page 6</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function downloadPDF() {
+    const element = document.getElementById('document');
+    const opt = {
+      margin: 0,
+      filename: 'Proposition_Communication_KWAOUKI_Isabelle_KIBASSA.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
+    };
+    html2pdf().set(opt).from(element).save();
+  }
+</script>
+
+</body>
+</html>
