@@ -18,499 +18,106 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
-    font-family:Arial, Helvetica, sans-serif;
-    color:var(--noir);
-    line-height:1.6;
-    overflow-x:hidden;
-  }
+  body{font-family:Arial, Helvetica, sans-serif;color:var(--noir);line-height:1.6;overflow-x:hidden;}
   img{max-width:100%;display:block;}
   a{text-decoration:none;color:inherit;}
-  .container{
-    max-width:1200px;
-    margin:0 auto;
-    padding:0 24px;
-  }
-
-  /* ===== HEADER ===== */
-  header{
-    position:fixed;top:0;left:0;right:0;z-index:1000;
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(10px);
-    padding:15px 0;
-    transition:all .3s;
-    border-bottom:1px solid #eee;
-  }
-  .header-inner{
-    display:flex;justify-content:space-between;align-items:center;
-    max-width:1200px;margin:0 auto;padding:0 24px;
-  }
-  .header-logo{
-    font-size:28px;
-    font-weight:900;
-    color:var(--noir);
-    letter-spacing:2px;
-  }
-  nav ul{
-    display:flex;gap:30px;list-style:none;
-  }
-  nav a{
-    color:var(--noir);font-size:14px;font-weight:600;
-    letter-spacing:1px;text-transform:uppercase;
-    transition:color .3s;
-  }
+  .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+  header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);padding:15px 0;border-bottom:1px solid #eee;}
+  .header-inner{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 24px;}
+  .header-logo{font-size:28px;font-weight:900;color:var(--noir);letter-spacing:2px;}
+  nav ul{display:flex;gap:30px;list-style:none;}
+  nav a{color:var(--noir);font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
   nav a:hover{color:var(--bleu);}
-  .burger{
-    display:none;flex-direction:column;gap:5px;
-    background:none;border:none;cursor:pointer;
-  }
-  .burger span{
-    width:28px;height:3px;background:var(--noir);
-    transition:all .3s;
-  }
-
-  /* ===== HERO ===== */
-  .hero{
-    min-height:100vh;
-    background:#fff;
-    color:var(--noir);
-    display:flex;align-items:center;
-    padding:120px 24px 60px;
-    position:relative;
-    overflow:hidden;
-  }
-  .hero::before{
-    content:'';position:absolute;
-    top:-50%;right:-20%;
-    width:600px;height:600px;
-    background:radial-gradient(circle,rgba(26,79,160,.08) 0%,transparent 70%);
-    border-radius:50%;
-  }
-  .hero-content{
-    max-width:1200px;margin:0 auto;
-    text-align:center;
-    position:relative;z-index:1;
-    width:100%;
-  }
-  .hero-logo{
-    font-size:clamp(40px,8vw,72px);
-    font-weight:900;
-    letter-spacing:4px;
-    margin-bottom:20px;
-    color:var(--noir);
-  }
-  .hero-tag{
-    font-size:14px;letter-spacing:6px;
-    color:var(--bleu);text-transform:uppercase;
-    margin-bottom:40px;
-  }
-  .hero h1{
-    font-size:clamp(40px,7vw,80px);
-    font-weight:900;
-    line-height:1.1;
-    margin-bottom:25px;
-  }
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;}
+  .burger span{width:28px;height:3px;background:var(--noir);}
+  .hero{min-height:100vh;background:#fff;color:var(--noir);display:flex;align-items:center;padding:120px 24px 60px;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(26,79,160,.08) 0%,transparent 70%);border-radius:50%;}
+  .hero-content{max-width:1200px;margin:0 auto;text-align:center;position:relative;z-index:1;width:100%;}
+  .hero-logo{font-size:clamp(40px,8vw,72px);font-weight:900;letter-spacing:4px;margin-bottom:20px;color:var(--noir);}
+  .hero-tag{font-size:14px;letter-spacing:6px;color:var(--bleu);text-transform:uppercase;margin-bottom:40px;}
+  .hero h1{font-size:clamp(40px,7vw,80px);font-weight:900;line-height:1.1;margin-bottom:25px;}
   .hero h1 span{color:var(--jaune);background:var(--noir);padding:0 8px;}
-  .hero p{
-    font-size:clamp(16px,2vw,22px);
-    font-weight:400;
-    color:#666;
-    margin-bottom:40px;
-    max-width:600px;
-    margin-left:auto;margin-right:auto;
-  }
-  .hero-cta{
-    display:inline-flex;align-items:center;gap:10px;
-    background:var(--rouge);color:#fff;
-    padding:16px 36px;border-radius:50px;
-    font-weight:700;font-size:15px;
-    letter-spacing:1px;text-transform:uppercase;
-    transition:all .3s;
-    box-shadow:0 10px 30px rgba(224,62,62,.4);
-  }
-  .hero-cta:hover{
-    background:var(--jaune);color:var(--noir);
-    transform:translateY(-3px);
-  }
-
-  /* ===== SECTIONS ===== */
+  .hero p{font-size:clamp(16px,2vw,22px);color:#666;margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto;}
+  .hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--rouge);color:#fff;padding:16px 36px;border-radius:50px;font-weight:700;font-size:15px;letter-spacing:1px;text-transform:uppercase;box-shadow:0 10px 30px rgba(224,62,62,.4);}
+  .hero-cta:hover{background:var(--jaune);color:var(--noir);transform:translateY(-3px);}
   section{padding:100px 0;}
-  .section-label{
-    font-size:12px;letter-spacing:4px;
-    color:var(--rouge);text-transform:uppercase;
-    margin-bottom:15px;
-    text-align:center;
-  }
-  .section-title{
-    font-size:clamp(32px,5vw,52px);
-    font-weight:900;
-    text-align:center;
-    margin-bottom:20px;
-    line-height:1.2;
-  }
+  .section-label{font-size:12px;letter-spacing:4px;color:var(--rouge);text-transform:uppercase;margin-bottom:15px;text-align:center;}
+  .section-title{font-size:clamp(32px,5vw,52px);font-weight:900;text-align:center;margin-bottom:20px;line-height:1.2;}
   .section-title span{color:var(--bleu);}
-  .section-subtitle{
-    text-align:center;
-    font-size:17px;color:#666;
-    max-width:700px;margin:0 auto 60px;
-  }
-
-  /* ===== ABOUT ===== */
+  .section-subtitle{text-align:center;font-size:17px;color:#666;max-width:700px;margin:0 auto 60px;}
   .about{background:#fff;}
-  .about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
-  }
-  .about-text h3{
-    font-size:28px;margin-bottom:20px;
-    color:var(--noir);
-  }
-  .about-text h3::before{
-    content:'';display:inline-block;
-    width:50px;height:4px;background:var(--rouge);
-    margin-right:15px;vertical-align:middle;
-  }
-  .about-text p{
-    font-size:16px;color:#444;
-    margin-bottom:20px;line-height:1.8;
-  }
-  .about-values{
-    display:flex;gap:15px;flex-wrap:wrap;
-    margin-top:30px;
-  }
-  .value-chip{
-    background:var(--gris);
-    padding:12px 22px;border-radius:30px;
-    font-size:13px;font-weight:700;
-    color:var(--bleu);
-    border-left:4px solid var(--jaune);
-  }
-  .about-visual{
-    background:var(--bleu);
-    color:#fff;
-    padding:60px 40px;
-    border-radius:12px;
-    text-align:center;
-    position:relative;
-    min-height:400px;
-    display:flex;flex-direction:column;
-    justify-content:center;
-  }
-  .about-visual::after{
-    content:'';position:absolute;
-    bottom:-20px;right:-20px;
-    width:80px;height:80px;
-    background:var(--jaune);
-    border-radius:50%;
-    z-index:-1;
-  }
-  .about-visual h2{
-    font-size:clamp(36px,4vw,56px);
-    font-weight:900;
-    line-height:1.1;
-  }
-
-  /* ===== SERVICES ===== */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .about-text h3{font-size:28px;margin-bottom:20px;color:var(--noir);}
+  .about-text h3::before{content:'';display:inline-block;width:50px;height:4px;background:var(--rouge);margin-right:15px;vertical-align:middle;}
+  .about-text p{font-size:16px;color:#444;margin-bottom:20px;line-height:1.8;}
+  .about-values{display:flex;gap:15px;flex-wrap:wrap;margin-top:30px;}
+  .value-chip{background:var(--gris);padding:12px 22px;border-radius:30px;font-size:13px;font-weight:700;color:var(--bleu);border-left:4px solid var(--jaune);}
+  .about-visual{background:var(--bleu);color:#fff;padding:60px 40px;border-radius:12px;text-align:center;min-height:400px;display:flex;flex-direction:column;justify-content:center;}
+  .about-visual h2{font-size:clamp(36px,4vw,56px);font-weight:900;line-height:1.1;}
   .services{background:var(--gris);}
-  .services-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-  }
-  .service-card{
-    background:#fff;
-    padding:30px 25px;
-    border-radius:10px;
-    border-top:4px solid var(--bleu);
-    box-shadow:0 4px 20px rgba(0,0,0,.06);
-    transition:all .3s;
-  }
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;}
+  .service-card{background:#fff;padding:30px 25px;border-radius:10px;border-top:4px solid var(--bleu);box-shadow:0 4px 20px rgba(0,0,0,.06);}
   .service-card:nth-child(2n){border-top-color:var(--rouge);}
   .service-card:nth-child(3n){border-top-color:var(--jaune);}
-  .service-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 12px 35px rgba(0,0,0,.12);
-  }
-  .service-num{
-    font-size:36px;font-weight:900;
-    color:var(--bleu);margin-bottom:12px;
-  }
+  .service-num{font-size:36px;font-weight:900;color:var(--bleu);margin-bottom:12px;}
   .service-card:nth-child(2n) .service-num{color:var(--rouge);}
   .service-card:nth-child(3n) .service-num{color:var(--jaune);}
-  .service-card h4{
-    font-size:16px;font-weight:700;
-    color:var(--noir);margin-bottom:10px;
-    line-height:1.3;
-  }
-  .service-card p{
-    font-size:14px;color:#666;line-height:1.6;
-  }
-
-  /* ===== APPROCHE ===== */
+  .service-card h4{font-size:16px;font-weight:700;color:var(--noir);margin-bottom:10px;line-height:1.3;}
+  .service-card p{font-size:14px;color:#666;line-height:1.6;}
   .approach{background:var(--noir);color:#fff;}
   .approach .section-label{color:var(--jaune);}
   .approach .section-title{color:#fff;}
   .approach .section-title span{color:var(--jaune);}
   .approach .section-subtitle{color:#aaa;}
-  .approach-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:25px;
-  }
-  .approach-card{
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:12px;
-    padding:35px 28px;
-    transition:all .3s;
-  }
-  .approach-card:hover{
-    background:rgba(255,255,255,.08);
-    border-color:var(--jaune);
-  }
-  .approach-num{
-    font-size:52px;font-weight:900;
-    color:var(--jaune);margin-bottom:15px;
-    line-height:1;
-  }
+  .approach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px;}
+  .approach-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:35px 28px;}
+  .approach-num{font-size:52px;font-weight:900;color:var(--jaune);margin-bottom:15px;line-height:1;}
   .approach-card:nth-child(2) .approach-num{color:var(--rouge);}
   .approach-card:nth-child(3) .approach-num{color:var(--bleu);}
-  .approach-card:nth-child(4) .approach-num{color:var(--jaune);}
-  .approach-card h4{
-    font-size:18px;font-weight:700;
-    margin-bottom:12px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-  }
-  .approach-card p{
-    font-size:14px;color:#bbb;line-height:1.7;
-  }
-
-  /* ===== RÉALISATIONS ===== */
+  .approach-card h4{font-size:18px;font-weight:700;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;}
+  .approach-card p{font-size:14px;color:#bbb;line-height:1.7;}
   .portfolio{background:#fff;}
-  .portfolio-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-  }
-  .portfolio-item{
-    position:relative;
-    border-radius:12px;
-    overflow:hidden;
-    aspect-ratio:4/3;
-    background:var(--gris);
-    cursor:pointer;
-    transition:all .3s;
-  }
-  .portfolio-item:hover{transform:scale(1.02);}
-  .portfolio-placeholder{
-    width:100%;height:100%;
-    display:flex;flex-direction:column;
-    align-items:center;justify-content:center;
-    background:linear-gradient(135deg,var(--bleu) 0%,var(--bleu-dark) 100%);
-    color:#fff;
-    padding:30px;
-    text-align:center;
-  }
-  .portfolio-item:nth-child(2) .portfolio-placeholder{
-    background:linear-gradient(135deg,var(--rouge) 0%,#a02020 100%);
-  }
-  .portfolio-item:nth-child(3) .portfolio-placeholder{
-    background:linear-gradient(135deg,var(--noir) 0%,var(--gris-fonce) 100%);
-  }
-  .portfolio-placeholder .p-icon{
-    font-size:48px;margin-bottom:15px;
-  }
-  .portfolio-placeholder h4{
-    font-size:20px;font-weight:700;
-    margin-bottom:8px;
-  }
-  .portfolio-placeholder p{
-    font-size:14px;opacity:.8;
-  }
-
-  /* ===== CONTACT ===== */
-  .contact{
-    background:var(--noir);
-    color:#fff;
-    padding:100px 0;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-  }
-  .contact::before{
-    content:'';position:absolute;
-    top:-100px;right:-100px;
-    width:400px;height:400px;
-    background:radial-gradient(circle,var(--bleu) 0%,transparent 70%);
-    opacity:.3;
-  }
-  .contact-content{
-    position:relative;z-index:1;
-    max-width:800px;margin:0 auto;
-    padding:0 24px;
-  }
+  .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
+  .portfolio-item{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:var(--gris);cursor:pointer;}
+  .portfolio-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;text-align:center;color:#fff;}
+  .portfolio-item:nth-child(4n+1) .portfolio-placeholder{background:linear-gradient(135deg,var(--bleu) 0%,var(--bleu-dark) 100%);}
+  .portfolio-item:nth-child(4n+2) .portfolio-placeholder{background:linear-gradient(135deg,var(--rouge) 0%,#a02020 100%);}
+  .portfolio-item:nth-child(4n+3) .portfolio-placeholder{background:linear-gradient(135deg,var(--noir) 0%,var(--gris-fonce) 100%);}
+  .portfolio-item:nth-child(4n+4) .portfolio-placeholder{background:linear-gradient(135deg,#4a148c 0%,#7b1fa2 100%);}
+  .portfolio-placeholder .p-icon{font-size:48px;margin-bottom:15px;}
+  .portfolio-placeholder h4{font-size:20px;font-weight:700;margin-bottom:8px;}
+  .portfolio-placeholder p{font-size:14px;opacity:.8;}
+  .contact{background:var(--noir);color:#fff;padding:100px 0;text-align:center;}
   .contact .section-label{color:var(--jaune);}
   .contact .section-title{color:#fff;}
   .contact .section-title span{color:var(--rouge);}
   .contact .section-subtitle{color:#aaa;margin-bottom:50px;}
-  .whatsapp-btn{
-    display:inline-flex;align-items:center;gap:12px;
-    background:#25D366;color:#fff;
-    padding:20px 45px;border-radius:50px;
-    font-size:18px;font-weight:700;
-    letter-spacing:1px;
-    transition:all .3s;
-    box-shadow:0 10px 30px rgba(37,211,102,.4);
-    margin-bottom:30px;
-  }
-  .whatsapp-btn:hover{
-    background:#1ebe5d;
-    transform:translateY(-4px);
-    box-shadow:0 15px 40px rgba(37,211,102,.5);
-  }
+  .whatsapp-btn{display:inline-flex;align-items:center;gap:12px;background:#25D366;color:#fff;padding:20px 45px;border-radius:50px;font-size:18px;font-weight:700;box-shadow:0 10px 30px rgba(37,211,102,.4);margin-bottom:30px;}
+  .whatsapp-btn:hover{background:#1ebe5d;transform:translateY(-4px);}
   .whatsapp-btn svg{width:28px;height:28px;fill:#fff;}
-  .contact-info{
-    display:flex;justify-content:center;
-    gap:40px;flex-wrap:wrap;
-    margin-top:40px;
-  }
-  .contact-info-item{
-    text-align:center;
-  }
-  .contact-info-item .ci-label{
-    font-size:11px;letter-spacing:2px;
-    color:var(--jaune);text-transform:uppercase;
-    margin-bottom:5px;
-  }
-  .contact-info-item .ci-value{
-    font-size:15px;font-weight:600;
-  }
-
-  /* ===== FOOTER ===== */
-  footer{
-    background:#050505;
-    color:#888;
-    padding:40px 24px;
-    text-align:center;
-  }
-  .footer-logo{
-    font-size:24px;
-    font-weight:900;
-    color:#fff;
-    margin-bottom:20px;
-    letter-spacing:3px;
-  }
-  .footer-slogan{
-    font-size:12px;letter-spacing:3px;
-    color:#666;text-transform:uppercase;
-    margin-bottom:20px;
-  }
-  .footer-divider{
-    width:60px;height:2px;
-    background:var(--jaune);
-    margin:20px auto;
-  }
-  .footer-copy{
-    font-size:13px;color:#555;
-    margin-bottom:10px;
-  }
-  .footer-signature{
-    font-size:14px;
-    color:var(--jaune);
-    font-weight:600;
-    letter-spacing:2px;
-  }
-
-  /* ===== WHATSAPP FLOATING ===== */
-  .whatsapp-float{
-    position:fixed;
-    bottom:25px;right:25px;
-    width:60px;height:60px;
-    background:#25D366;
-    border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 6px 20px rgba(37,211,102,.5);
-    z-index:999;
-    transition:all .3s;
-    animation:pulse 2s infinite;
-  }
-  .whatsapp-float:hover{
-    transform:scale(1.1);
-  }
+  .contact-info{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:40px;}
+  .contact-info-item{text-align:center;}
+  .contact-info-item .ci-label{font-size:11px;letter-spacing:2px;color:var(--jaune);text-transform:uppercase;margin-bottom:5px;}
+  .contact-info-item .ci-value{font-size:15px;font-weight:600;}
+  footer{background:#050505;color:#888;padding:40px 24px;text-align:center;}
+  .footer-logo{font-size:24px;font-weight:900;color:#fff;margin-bottom:20px;letter-spacing:3px;}
+  .footer-slogan{font-size:12px;letter-spacing:3px;color:#666;text-transform:uppercase;margin-bottom:20px;}
+  .footer-divider{width:60px;height:2px;background:var(--jaune);margin:20px auto;}
+  .footer-copy{font-size:13px;color:#555;margin-bottom:10px;}
+  .footer-signature{font-size:14px;color:var(--jaune);font-weight:600;letter-spacing:2px;}
+  .whatsapp-float{position:fixed;bottom:25px;right:25px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.5);z-index:999;}
   .whatsapp-float svg{width:32px;height:32px;fill:#fff;}
-  @keyframes pulse{
-    0%,100%{box-shadow:0 6px 20px rgba(37,211,102,.5);}
-    50%{box-shadow:0 6px 30px rgba(37,211,102,.8);}
-  }
-
-  /* ===== LIGHTBOX ===== */
-  .lightbox{
-    display:none;
-    position:fixed;
-    top:0;left:0;right:0;bottom:0;
-    background:rgba(0,0,0,.95);
-    z-index:10000;
-    align-items:center;justify-content:center;
-    padding:20px;
-  }
+  .lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.95);z-index:10000;align-items:center;justify-content:center;padding:20px;}
   .lightbox.active{display:flex;}
-  .lightbox-content{
-    max-width:90%;
-    max-height:90%;
-    position:relative;
-  }
-  .lightbox-close{
-    position:absolute;
-    top:-40px;right:0;
-    background:none;
-    border:none;
-    color:#fff;
-    font-size:32px;
-    cursor:pointer;
-  }
-  .lightbox img, .lightbox iframe{
-    max-width:100%;
-    max-height:80vh;
-    border-radius:8px;
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media(max-width:900px){
-    .about-grid{grid-template-columns:1fr;gap:40px;}
-    .about-visual{min-height:300px;}
-    nav ul{
-      display:none;
-      position:absolute;top:100%;left:0;right:0;
-      background:#fff;
-      flex-direction:column;
-      padding:20px;gap:20px;
-      border-bottom:1px solid #eee;
-    }
-    nav ul.active{display:flex;}
-    .burger{display:flex;}
-    .contact-info{gap:25px;}
-  }
-  @media(max-width:600px){
-    section{padding:70px 0;}
-    .hero{padding:100px 20px 50px;}
-    .hero-logo{font-size:36px;}
-    .hero-tag{font-size:12px;letter-spacing:4px;}
-    .services-grid{grid-template-columns:1fr;}
-    .approach-grid{grid-template-columns:1fr;}
-    .portfolio-grid{grid-template-columns:1fr;}
-    .whatsapp-btn{
-      padding:16px 30px;
-      font-size:16px;
-    }
-  }
+  .lightbox-content{max-width:90%;max-height:90%;position:relative;}
+  .lightbox-close{position:absolute;top:-40px;right:0;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;}
+  .lightbox img,.lightbox iframe{max-width:100%;max-height:80vh;border-radius:8px;}
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px;}nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;gap:20px;border-bottom:1px solid #eee;}nav ul.active{display:flex;}.burger{display:flex;}}
+  @media(max-width:600px){section{padding:70px 0;}.hero{padding:100px 20px 50px;}.hero-logo{font-size:36px;}.services-grid,.approach-grid,.portfolio-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-inner">
     <a href="#" class="header-logo" id="header-logo">KWAOUKI RDC</a>
@@ -529,7 +136,6 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-logo" id="hero-logo">KWAOUKI RDC</div>
@@ -540,15 +146,12 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about" id="about">
   <div class="container">
     <div class="section-label">Qui sommes-nous</div>
     <h2 class="section-title" id="about-title">L'art de <span>communiquer</span> avec impact.</h2>
     <div class="about-grid">
-      <div class="about-visual">
-        <h2 id="about-visual-title">Votre succès est notre signature.</h2>
-      </div>
+      <div class="about-visual"><h2 id="about-visual-title">Votre succès est notre signature.</h2></div>
       <div class="about-text">
         <h3 id="about-text-title">Notre identité</h3>
         <p id="about-p1">KWAOUKI RDC est une agence de communication 360° dédiée aux entreprises, institutions et personnalités publiques qui souhaitent affirmer leur présence, structurer leur message et maximiser leur impact.</p>
@@ -559,7 +162,6 @@
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="services" id="services">
   <div class="container">
     <div class="section-label">Nos domaines d'expertise</div>
@@ -569,7 +171,6 @@
   </div>
 </section>
 
-<!-- APPROCHE -->
 <section class="approach" id="approche">
   <div class="container">
     <div class="section-label">Notre méthodologie</div>
@@ -579,7 +180,6 @@
   </div>
 </section>
 
-<!-- PORTFOLIO -->
 <section class="portfolio" id="portfolio">
   <div class="container">
     <div class="section-label">Nos réalisations</div>
@@ -589,36 +189,23 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
-  <div class="contact-content">
+  <div class="container">
     <div class="section-label">Contact</div>
     <h2 class="section-title">Prêt à faire <span>rayonner</span> votre marque ?</h2>
     <p class="section-subtitle">Échangeons directement sur WhatsApp. Réponse rapide garantie.</p>
-    
     <a href="#" id="whatsapp-btn" target="_blank" class="whatsapp-btn">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Écrire sur WhatsApp
     </a>
-
     <div class="contact-info">
-      <div class="contact-info-item">
-        <div class="ci-label">Téléphone</div>
-        <div class="ci-value" id="contact-phone">+243 861 636 739</div>
-      </div>
-      <div class="contact-info-item">
-        <div class="ci-label">Email</div>
-        <div class="ci-value" id="contact-email">contact@kwaouki.com</div>
-      </div>
-      <div class="contact-info-item">
-        <div class="ci-label">Localisation</div>
-        <div class="ci-value" id="contact-address">République Démocratique du Congo</div>
-      </div>
+      <div class="contact-info-item"><div class="ci-label">Téléphone</div><div class="ci-value" id="contact-phone">+243 861 636 739</div></div>
+      <div class="contact-info-item"><div class="ci-label">Email</div><div class="ci-value" id="contact-email">contact@kwaouki.com</div></div>
+      <div class="contact-info-item"><div class="ci-label">Localisation</div><div class="ci-value" id="contact-address">République Démocratique du Congo</div></div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo" id="footer-logo">KWAOUKI RDC</div>
   <div class="footer-slogan" id="footer-slogan">Stratégie · Créativité · Impact</div>
@@ -627,12 +214,10 @@
   <div class="footer-signature">By FILON GROUP</div>
 </footer>
 
-<!-- WHATSAPP FLOATING BUTTON -->
 <a href="#" id="whatsapp-float" target="_blank" class="whatsapp-float" aria-label="Contact WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <div class="lightbox-content">
     <button class="lightbox-close" onclick="closeLightbox()">×</button>
@@ -667,14 +252,21 @@
 
   async function init() {
     try {
-      // Charger les données
       const site = await loadYAML('data/site.yml');
       const about = await loadYAML('data/about.yml');
       const services = await loadYAMLFolder('data/services');
       const approach = await loadYAMLFolder('data/approach');
-      const portfolio = await loadYAMLFolder('data/portfolio');
+      
+      // Portfolio : on charge le fichier unique
+      let portfolio = [];
+      try {
+        const portfolioData = await loadYAML('data/portfolio.yml');
+        portfolio = portfolioData.realisations || [];
+      } catch(e) {
+        // Si le fichier unique n'existe pas, on essaie le dossier
+        portfolio = await loadYAMLFolder('data/portfolio');
+      }
 
-      // Remplir le site
       document.getElementById('header-logo').textContent = site.agency_name || 'KWAOUKI RDC';
       document.getElementById('hero-logo').textContent = site.agency_name || 'KWAOUKI RDC';
       document.getElementById('hero-tag').textContent = site.tagline || '';
@@ -683,7 +275,6 @@
       document.getElementById('hero-cta').href = `https://wa.me/${site.whatsapp_number}`;
       document.getElementById('hero-cta').textContent = site.cta_text || '';
 
-      // About
       document.getElementById('about-title').innerHTML = (about.section_title || '').replace(/communiquer/g, '<span>communiquer</span>');
       document.getElementById('about-visual-title').textContent = about.visual_title || '';
       document.getElementById('about-text-title').textContent = about.text_title || '';
@@ -698,64 +289,41 @@
         valuesContainer.appendChild(chip);
       });
 
-      // Services
       const servicesGrid = document.getElementById('services-grid');
       servicesGrid.innerHTML = '';
       services.forEach(s => {
         const card = document.createElement('div');
         card.className = 'service-card';
-        card.innerHTML = `
-          <div class="service-num">${s.number}</div>
-          <h4>${s.title}</h4>
-          <p>${s.description}</p>
-        `;
+        card.innerHTML = `<div class="service-num">${s.number}</div><h4>${s.title}</h4><p>${s.description}</p>`;
         servicesGrid.appendChild(card);
       });
 
-      // Approach
       const approachGrid = document.getElementById('approach-grid');
       approachGrid.innerHTML = '';
       approach.forEach(a => {
         const card = document.createElement('div');
         card.className = 'approach-card';
-        card.innerHTML = `
-          <div class="approach-num">${a.number}</div>
-          <h4>${a.title}</h4>
-          <p>${a.description}</p>
-        `;
+        card.innerHTML = `<div class="approach-num">${a.number}</div><h4>${a.title}</h4><p>${a.description}</p>`;
         approachGrid.appendChild(card);
       });
 
-      // Portfolio
       const portfolioGrid = document.getElementById('portfolio-grid');
       portfolioGrid.innerHTML = '';
       portfolio.forEach((p, i) => {
         const item = document.createElement('div');
         item.className = 'portfolio-item';
         item.onclick = () => openLightbox(p);
-        
         let icon = '📊';
         if (p.media_type === 'video') icon = '🎬';
-        if (p.media_type === 'image') icon = '';
-        
-        item.innerHTML = `
-          <div class="portfolio-placeholder" style="background:linear-gradient(135deg,var(--bleu) 0%,var(--bleu-dark) 100%)">
-            <div class="p-icon">${icon}</div>
-            <h4>${p.title}</h4>
-            <p>${p.description}</p>
-          </div>
-        `;
+        item.innerHTML = `<div class="portfolio-placeholder"><div class="p-icon">${icon}</div><h4>${p.title}</h4><p>${p.description}</p></div>`;
         portfolioGrid.appendChild(item);
       });
 
-      // Contact
       document.getElementById('contact-phone').textContent = site.phone || '';
       document.getElementById('contact-email').textContent = site.email || '';
       document.getElementById('contact-address').textContent = site.address || '';
       document.getElementById('whatsapp-btn').href = `https://wa.me/${site.whatsapp_number}?text=Bonjour%20KWAOUKI%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20services.`;
       document.getElementById('whatsapp-float').href = `https://wa.me/${site.whatsapp_number}?text=Bonjour%20KWAOUKI%2C%20je%20souhaite%20en%20savoir%20plus.`;
-
-      // Footer
       document.getElementById('footer-logo').textContent = site.agency_name || 'KWAOUKI RDC';
       document.getElementById('footer-slogan').textContent = site.hero_subtitle || '';
 
@@ -767,7 +335,6 @@
   function openLightbox(item) {
     const lightbox = document.getElementById('lightbox');
     const body = document.getElementById('lightbox-body');
-    
     if (item.media_type === 'video') {
       let videoUrl = item.media_url;
       if (videoUrl.includes('youtube.com/watch?v=')) {
@@ -784,7 +351,6 @@
     } else {
       body.innerHTML = `<img src="${item.media_url}" alt="${item.title}">`;
     }
-    
     lightbox.classList.add('active');
   }
 
@@ -797,14 +363,12 @@
     if (e.target.id === 'lightbox') closeLightbox();
   });
 
-  // Fermer le menu mobile au clic sur un lien
   document.querySelectorAll('#navMenu a').forEach(link => {
     link.addEventListener('click', () => {
       document.getElementById('navMenu').classList.remove('active');
     });
   });
 
-  // Initialiser
   init();
 </script>
 
