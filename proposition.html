@@ -39,25 +39,26 @@
 
   .slide {
     width: 297mm;
-    height: 210mm;
+    min-height: 210mm;
     background: white;
     margin: 0 auto 30px;
-    padding: 60px;
+    padding: 50px 60px 80px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0,0,0,0.2);
     page-break-after: always;
+    display: flex;
+    flex-direction: column;
   }
 
   /* PAGE DE GARDE */
   .cover {
     background: linear-gradient(135deg, #0a0a0a 0%, #1a4fa0 100%);
     color: white;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 60px;
   }
 
   .cover::before {
@@ -101,19 +102,28 @@
   }
 
   .cover-subtitle {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 300;
     letter-spacing: 2px;
     margin-bottom: 40px;
     position: relative;
     z-index: 1;
+    line-height: 1.6;
+  }
+
+  .cover-subtitle strong {
+    display: block;
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #f5d560;
   }
 
   .cover-photo {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
-    border: 4px solid #f5d560;
+    border: 5px solid #f5d560;
     margin: 30px auto;
     background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400') center/cover;
     position: relative;
@@ -162,6 +172,7 @@
     font-size: 16px;
     line-height: 1.8;
     color: #333;
+    flex: 1;
   }
 
   .slide-body p {
@@ -390,10 +401,11 @@
     right: 60px;
     display: flex;
     justify-content: space-between;
-    font-size: 12px;
+    font-size: 11px;
     color: #999;
     border-top: 1px solid #eee;
     padding-top: 15px;
+    margin-top: auto;
   }
 
   .note-box {
@@ -413,7 +425,7 @@
 </head>
 <body>
 
-<button class="download-btn" onclick="downloadPDF()"> Télécharger en PDF</button>
+<button class="download-btn" onclick="downloadPDF()">📄 Télécharger en PDF</button>
 
 <div id="document">
 
@@ -423,7 +435,10 @@
     <div class="cover-line"></div>
     <div class="cover-photo"></div>
     <h1 class="cover-title">Proposition de Gestion<br>de Communication 360°</h1>
-    <div class="cover-subtitle">Ambassadeur Itinérant du Chef de l'État<br><strong>Madame Isabelle KIBASSA-MALIBA TSHISEKEDI</strong></div>
+    <div class="cover-subtitle">
+      Ambassadeur Itinérant du Chef de l'État
+      <strong>Madame Isabelle KIBASSA-MALIBA TSHISEKEDI</strong>
+    </div>
     <div class="cover-date">SEPTEMBRE 2026</div>
   </div>
 
