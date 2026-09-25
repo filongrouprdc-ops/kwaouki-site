@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KWAOUKI RDC — Agence de Communication 360°</title>
 <meta name="description" content="KWAOUKI RDC, agence de communication 360°. Stratégie, créativité, impact.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 <style>
   :root{
@@ -18,7 +19,7 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{font-family:Arial, Helvetica, sans-serif;color:var(--noir);line-height:1.6;overflow-x:hidden;}
+  body{font-family:'Montserrat', sans-serif;color:var(--noir);line-height:1.6;overflow-x:hidden;}
   img{max-width:100%;display:block;}
   a{text-decoration:none;color:inherit;}
   .container{max-width:1200px;margin:0 auto;padding:0 24px;}
@@ -140,7 +141,7 @@
   <div class="hero-content">
     <div class="hero-logo" id="hero-logo">KWAOUKI RDC</div>
     <div class="hero-tag" id="hero-tag">Agence de Communication</div>
-    <h1 id="hero-title">Donnons <span>voix</span><br>à votre marque.</h1>
+    <h1 id="hero-title">Votre réputation, notre <span>obligation</span>.</h1>
     <p id="hero-subtitle">Stratégie · Créativité · Impact</p>
     <a href="#" id="hero-cta" class="hero-cta">Discutons de votre projet</a>
   </div>
@@ -257,20 +258,18 @@
       const services = await loadYAMLFolder('data/services');
       const approach = await loadYAMLFolder('data/approach');
       
-      // Portfolio : on charge le fichier unique
       let portfolio = [];
       try {
         const portfolioData = await loadYAML('data/portfolio.yml');
         portfolio = portfolioData.realisations || [];
       } catch(e) {
-        // Si le fichier unique n'existe pas, on essaie le dossier
         portfolio = await loadYAMLFolder('data/portfolio');
       }
 
       document.getElementById('header-logo').textContent = site.agency_name || 'KWAOUKI RDC';
       document.getElementById('hero-logo').textContent = site.agency_name || 'KWAOUKI RDC';
       document.getElementById('hero-tag').textContent = site.tagline || '';
-      document.getElementById('hero-title').innerHTML = (site.hero_title || '').replace(/voix/g, '<span>voix</span>');
+      document.getElementById('hero-title').innerHTML = (site.hero_title || '').replace(/obligation/g, '<span>obligation</span>');
       document.getElementById('hero-subtitle').textContent = site.hero_subtitle || '';
       document.getElementById('hero-cta').href = `https://wa.me/${site.whatsapp_number}`;
       document.getElementById('hero-cta').textContent = site.cta_text || '';
